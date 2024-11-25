@@ -12,7 +12,7 @@ chmod +x kubectl
    12  kubectl version --client
    13  aws confugure
    14  aws configure
-   15  eksctl create cluster --name demo-ekscluster --region ap-south-1 --version 1.27 --nodegroup-name linux-nodes --node-type t2.micro --nodes 2
+   
    16  eksctl create cluster --name demo-ekscluster --region ap-south-1 --version 1.27 --nodegroup-name Linux-nodes --node-type t2.micro --nodes 2
    17  kubectl get nodes
    18  aws eks update-kubeconfig --name eks-cluster
