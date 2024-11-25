@@ -15,8 +15,7 @@ chmod +x kubectl
    
    16  eksctl create cluster --name demo-ekscluster --region ap-south-1 --version 1.27 --nodegroup-name Linux-nodes --node-type t2.micro --nodes 2
    17  kubectl get nodes
-   18  aws eks update-kubeconfig --name eks-cluster
-   19  aws eks update-kubeconfig --name demo-ekscluster
+     19  aws eks update-kubeconfig --name demo-ekscluster
    20  kubectl get nodes
    21  nano pod.yaml
    22  kubectl apply -f pod.yaml 
