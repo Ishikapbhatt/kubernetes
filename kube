@@ -1,0 +1,27 @@
+snap install aws-cli --classic 
+    2  mv /tmp/eksctl /usr/local/bin
+    3  eksctl version
+    4  curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+    5  sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+    6  chmod +x kubectl
+    7  kubectl version --client
+    8  aws configure 
+    9  eksctl create cluster --name demo-ekscluster --region ap-south-1 --version 1.27 --nodegroup-name Linux-nodes --node-type t2.micro --nodes 2
+   10  kubectl get all
+   11  nano nginx-pod.yaml
+   12  kubectl apply -f nginx-pod.yaml 
+   13  nano nginx-pod.yaml
+   14  kubectl get po
+   15  nano nginx-pod.yaml
+   16  kubectl apply -f nginx-pod.yaml 
+   17  kubectl get pods
+   18  kubectl get pods -o wide
+   19  kubectl describe nginx-pod.yaml 
+   20  kubectl describe nginx-pod
+   21  nano nginx-service.yaml
+   22  kubectl apply -f nginx-service.yaml 
+   23  nano nginx-service.yaml
+   24  kubectl apply -f nginx-service.yaml 
+   25  kubectl get all
+   26  eks ip
+   27  kubectl get all -o
