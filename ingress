@@ -1,0 +1,47 @@
+1  curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+    2  echo "$(cat kubectl.sha256)  kubectl" | sha256sum --check
+    3  chmod +x kubectl
+    4  mkdir -p ~/.local/bin
+    5  mv ./kubectl ~/.local/bin/kubectl
+    6  kubectl version --client
+    7  minikube start
+    8  curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+    9  sudo install minikube-linux-amd64 /usr/local/bin/minikube
+   10  minikube start
+   11  curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+   12  sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+   13  chmod +x kubectl
+   14  mkdir -p ~/.local/bin
+   15  mv ./kubectl ~/.local/bin/kubectl
+   16  kubectl version --client
+   17  kubectl get all
+   18  minikube start
+   19  nano /etc/docker/daemon.json
+   20  minikube start
+   21  minikube start --drive=none
+   22  minikube start --help
+   23  minikube --vm-driver=none start
+   24  minikube --vm-driver=none 
+   25  sudo apt install conntrack~
+   26  sudo apt install conntrack
+   27* sudo install conntrack
+   28  cat /etc/kubernetes/kube-proxy
+   29  minikube start 
+   30  cat /etc/kubernetes/kube-proxy
+   31  minikube start 
+   32  minikube start --force
+   33  kubectl get all
+   34  minikube addons enable ingress
+   35  kubectl get pods -n ingress-nginx
+   36  kubectl create deployment web --image=gcr.io/google-samples/hello-app:1.0
+   37  kubectl get deployment web
+   38  kubectl expose deployment web --type=NodePort --port=8080
+   39  kubectl get service web
+   40  minikube service web --url
+   41  curl http://192.168.49.2:30463
+   42  nano ingress.yaml
+   43  kubectl apply -f ingress.yaml 
+   44  kubectl get ingress
+   45  curl --resolve "hello-world.example:80:$( minikube ip )" -i http://hello-world.example
+   46  minikube ip
+   47  history 
