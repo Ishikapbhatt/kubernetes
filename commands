@@ -1,0 +1,10 @@
+snap install aws-cli --classic 
+aws configure
+eksctl create cluster --name demo-ekscluster --region ap-south-1 --version 1.27 --nodegroup-name Linux-nodes --node-type t2.micro --nodes 2
+aws configure
+eksctl create cluster --name demo-ekscluster --region ap-south-1 --version 1.27 --nodegroup-name Linux-nodes --node-type t2.micro --nodes 2
+kubectl get all
+kubectl run my-pod --image=nginx --restart=Never
+kubectl expose pod my-pod --type=NodePort --port=80  --target-port=80
+kubectl get svc
+kubectl get nodes -o wide
