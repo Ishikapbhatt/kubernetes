@@ -39,3 +39,7 @@ chmod +x kubectl
    32  kubectl get pod -o wide
    33  kubectl exec -it mypod -- bash
    34  history 
+
+
+
+POD_IP=$(kubectl get pod my-pod -o jsonpath='{.status.podIP}')
