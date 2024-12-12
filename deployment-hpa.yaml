@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app-deployment
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+      - name: my-app
+        image: nginx:latest  # Replace with your app image
+        resources:
+          requests:
+            cpu: "200m"  # Request 200 millicores
+          limits:
+            cpu: "500m"  # Limit to 500 millicores
