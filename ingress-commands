@@ -1,0 +1,21 @@
+minikube addons enable ingress
+kubectl get pods -n ingress-nginx
+kubectl create deployment web --image=gcr.io/google-samples/hello-app:1.0
+kubectl get deployment web 
+kubectl expose deployment web --type=NodePort --port=8080
+kubectl get service web
+minikube service web --url
+curl http://192.168.49.2:32340
+nano example-ingress.yaml
+kubectl apply -f https://k8s.io/examples/service/networking/example-ingress.yaml
+kubectl apply -f example-ingress.yaml 
+kubectl get ingress
+curl --resolve "hello-world.example:80:$( minikube ip )" -i http://hello-world.example
+minikube ip
+kubectl create deployment web2 --image=gcr.io/google-samples/hello-app:2.0
+kubectl get deployment web2 
+kubectl expose deployment web2 --port=8080 --type=NodePort
+nano example-ingress.yaml 
+kubectl apply -f example-ingress.yaml 
+curl --resolve "hello-world.example:80:$( minikube ip )" -i http://hello-world.example
+curl --resolve "hello-world.example:80:$( minikube ip )" -i http://hello-world.example/v2
