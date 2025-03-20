@@ -3,6 +3,6 @@ kind: ConfigMap
 metadata:
   name: my-config
 data:
-  app.properties: |
+  app.properties: 
   APP_ENV: production
   APP_PORT: "8080"
